@@ -1,12 +1,15 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  
+  get 'pages/about'
+  get 'pages/contact'
   resources :blogs
   devise_for :users
   get 'home/index'
     mount Sidekiq::Web => '/sidekiq'
     
-    root to:  "blogs#index"
+  root to:  "pages#home"
 
 
 
