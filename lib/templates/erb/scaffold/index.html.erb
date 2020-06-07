@@ -1,0 +1,35 @@
+<h2><%= plural_table_name.titleize %></h2>
+
+<p id="notice"><%%= notice %></p>
+
+<hr>
+<div>
+  <% attributes.reject(&:password_digest?).each do |attribute| %>
+    <p><%= attribute.human_name %></p>
+  <% end %> 
+<%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+  
+<% attributes.reject(&:password_digest?).each do |attribute| %>
+  <p><%%= <%= singular_table_name %>.<%= attribute.column_name %> %></p>
+<% end %>
+  <p>
+    <div class="button btn btn-sm btn-outline-primary">
+      <%%= link_to 'Show', <%= model_resource_name %> %>
+    </div>
+    <div class="button btn btn-sm btn-outline-success">
+      <%%= link_to 'Edit', edit_<%= singular_route_name %>_path(<%= singular_table_name %>) %>
+    </div>
+    <div class="button btn btn-sm btn-outline-dark">
+      <%%= link_to 'delete', <%= model_resource_name %>, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </p>  
+<%% end %>
+
+<br>
+<div class="button btn btn-sm btn-dark">
+<%%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_route_name %>_path %> 
+</div>
+
+
+
+

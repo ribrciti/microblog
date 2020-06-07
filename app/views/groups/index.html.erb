@@ -1,0 +1,35 @@
+<h2>Groups</h2>
+
+<p id="notice"><%= notice %></p>
+
+<hr>
+<div>
+   
+<% @groups.each do |group| %>
+  
+
+  <p><%= group.name %></p>
+
+  <p><%= group.description %></p>
+
+  <p>
+    <div class="button-small btn btn-sm btn-outline-primary">
+      <%= link_to 'Show', group %>
+    </div>
+    <div class="button btn btn-sm btn-outline-success">
+      <%= link_to 'Edit', edit_group_path(group) %>
+    </div>
+    <div class="button btn btn-sm btn-outline-dark">
+      <%= link_to 'delete', group, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </p>  
+<% end %>
+
+<br>
+<div class="button btn btn-sm btn-dark">
+<%= link_to 'New Group', new_group_path %> 
+</div>
+
+
+
+
