@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
 Blog.create!( title: "Confessions of a Swimming Freak", 
                body:"Bicycle rights banjo banh mi, kombucha tacos meditation organic squid you probably haven't heard of them pok pok disrupt chartreuse tilde edison bulb franzen. Humblebrag yr subway tile taxidermy drinking vinegar hashtag vape twee meggings pop-up tote bag craft beer church-key banjo keffiyeh. Green juice direct trade street art slow-carb pickled butcher. Bicycle rights four loko tbh occupy truffaut. Chicharrones four dollar toast cold-pressed air plant keytar.
 
@@ -23,7 +14,7 @@ Blog.create!( title: "Drumming Addict",
                body:"Bicycle rights banjo banh mi, kombucha tacos meditation organic squid you probably haven't heard of them pok pok disrupt chartreuse tilde edison bulb franzen. Humblebrag yr subway tile taxidermy drinking vinegar hashtag vape twee meggings pop-up tote bag craft beer church-key banjo keffiyeh. Green juice direct trade street art slow-carb pickled butcher. Bicycle rights four loko tbh occupy truffaut. Chicharrones four dollar toast cold-pressed air plant keytar.
 
 La croix etsy scenester kickstarter cronut next level cornhole tacos chicharrones. Selfies 8-bit man bun meggings microdosing, yr wolf asymmetrical tofu neutra +1 franzen. Before they sold out pork belly waistcoat, fingerstache chillwave pinterest microdosing. Air plant fashion axe cornhole hexagon raclette, subway tile PBR&B chartreuse lomo freegan sriracha. DIY la croix chartreuse hot chicken +1 bushwick pork belly." )
-Blog.create!( title: "The Art of Swimming", 
+blog.creatBlog.create!( title: "The Art of Swimming", 
                body:"Bicycle rights banjo banh mi, kombucha tacos meditation organic squid you probably haven't heard of them pok pok disrupt chartreuse tilde edison bulb franzen. Humblebrag yr subway tile taxidermy drinking vinegar hashtag vape twee meggings pop-up tote bag craft beer church-key banjo keffiyeh. Green juice direct trade street art slow-carb pickled butcher. Bicycle rights four loko tbh occupy truffaut. Chicharrones four dollar toast cold-pressed air plant keytar.
 
 La croix etsy scenester kickstarter cronut next level cornhole tacos chicharrones. Selfies 8-bit man bun meggings microdosing, yr wolf asymmetrical tofu neutra +1 franzen. Before they sold out pork belly waistcoat, fingerstache chillwave pinterest microdosing. Air plant fashion axe cornhole hexagon raclette, subway tile PBR&B chartreuse lomo freegan sriracha. DIY la croix chartreuse hot chicken +1 bushwick pork belly." )
@@ -72,7 +63,7 @@ Portfolio.create!( title: "The P Word",
                     thumb_image:  "https://via.placeholder.com/350x200")
 Portfolio.create!( title: "The Portfolio Post",
                     subtitle: "My great service again",
-                    body: "La croix etsy scenester kickstarter cronut next level cornhole tacos chicharrones. Selfies 8-bit man bun meggings microdosing, yr wolf asymmetrical tofu neutra +1 franzen. Before they sold out pork belly waistcoat, fingerstache chillwave pinterest",
+                    body: "La croix etsy scenester kickstarter cronut next level cornhole tacos chicharrones. Selfies 8-bit man bun meggings microdosing, yr wolf asymmetrical tofu neutra +1 franzen. Before they sold out pork belly waistcoat, fingerstache chillwave pinterest microdosinghttps://via.placeholder.com/600x400.",
                     main_image: "https://via.placeholder.com/600x400",
                     thumb_image:  "https://via.placeholder.com/350x200")
 Portfolio.create!( title: "The Portfolio Times",

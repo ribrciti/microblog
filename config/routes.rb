@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   resources :groups
   resources :portfolios
+  
   get 'pages/about'
   get 'pages/contact'
   resources :blogs
