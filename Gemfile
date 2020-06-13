@@ -38,6 +38,8 @@ gem 'sidekiq', '~> 6.0', '>= 6.0.5'
 gem 'friendly_id', '~> 5.2', '>= 5.2.5'
 gem 'foreman', '~> 0.86.0'
 gem 'figaro', '~> 1.2'
+gem 'image_processing', '~> 1.2'  # uncomment this line
+
 group :development, :test do
   gem 'better_errors', '~> 2.5', '>= 2.5.1'
   gem 'binding_of_caller'
