@@ -1,14 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @group.name %>
+  <strong>Title:</strong>
+  <%= @portfolio_item.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @group.description %>
+  <strong>Subtitle:</strong>
+  <%= @portfolio_item.subtitle %>
 </p>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<p>
+  <strong>Body</strong>
+  <%= @portfolio_item.body %>
+</p>
+
+<p>
+  <strong>Main Image</strong>
+  <%= @portfolio_item.main_image %>
+</p>
+
+<p>
+  <strong>Thumb Image</strong>
+  <%= @portfolio_item.thumb_image %>
+</p>
+
+<%= link_to 'Edit', edit_portfolio_path(@portfolio_item) %> |
+<%= link_to 'Back', portfolio_path %>

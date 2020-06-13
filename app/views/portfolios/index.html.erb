@@ -6,7 +6,8 @@
   <h4><%= portfolio_item.title %></h4>
   <h5><%= portfolio_item.subtitle %></h5>
   <%= portfolio_item.body %><br>
-  <%= image_tag portfolio_item.thumb_image %> <br>
+  <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %> <br>
+  <%#= link_to "Edit", edit_portfolio_path(@portfolio_item) %>
   <%= link_to "Delete", @portfolio_item, method: :destroy, data: { confirm: 'Are you sure?' } %>
   <hr>
 <% end %>
