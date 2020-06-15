@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<%= @portfolio_item.id %>
+<%= image_tag @portfolio_item.main_image  %>
 <p>
   <strong>Title:</strong>
   <%= @portfolio_item.title %>
@@ -16,12 +17,12 @@
 </p>
 
 <p>
-  <strong>Main Image</strong>
+  <strong>Main Image File</strong>
   <%= @portfolio_item.main_image %>
 </p>
 
 <p>
-  <strong>Thumb Image</strong>
+  <strong>Thumb Image File</strong>
   <%= @portfolio_item.thumb_image %>
 </p>
 <button class="m-3 btn btn-sm btn-outline-primary">
