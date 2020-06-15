@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   resources :groups
   resources :portfolios
   
-  get 'pages/about'
-  get 'pages/contact'
+  #get 'pages/about'  see below
+  get'about', to: 'pages#about'
+
+  #get 'pages/contact'
+  get 'contact', to: 'pages#contact'
+
   resources :blogs
   devise_for :users
   get 'home/index'
