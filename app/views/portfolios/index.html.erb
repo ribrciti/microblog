@@ -3,7 +3,7 @@
 <h1>Portfolio Items</h1>
 <div>
 <% @portfolio_items.each do |portfolio_item| %> 
-  <h4><%= link_to portfolio_item.title, portfolio_path(portfolio_item)  %> # <%= portfolio_item.id %></h4>
+  <h4><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item)  %> # <%= portfolio_item.id %></h4>
   <h5><%= portfolio_item.subtitle %></h5>
   <%= portfolio_item.body %><br>
   <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %> <br>  

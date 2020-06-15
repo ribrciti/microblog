@@ -3,7 +3,8 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   
   resources :groups
-  resources :portfolios
+  resources :portfolios, except: [:show]
+  get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
   
   #get 'pages/about'  see below
   get'about', to: 'pages#about'
