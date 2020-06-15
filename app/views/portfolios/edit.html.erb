@@ -4,3 +4,4 @@
 
 <%= link_to 'Show', @portfoloio %> |
 <%= link_to 'Back', portfolios_path %>
+<%= link_to "Delete", @portfolio, method: :destroy, data: { confirm: 'Are you sure?' } %>
