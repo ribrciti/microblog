@@ -1,15 +1,5 @@
 <%= form_with(model: blog, local: true) do |form| %>
-  <% if blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
-      <ul>
-        <% blog.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  
 
   <div class="form-control">
     <%= form.label :title %>
@@ -18,9 +8,9 @@
 
   <div class="form-control">
     <%= form.label :body %>
-    <%= form.text_area :body, :size "50 x20" %>
+    <%= form.text_area :body %>
   </div>
-
+<br>
   <div class="actions">
     <%= form.submit %>
   </div>
