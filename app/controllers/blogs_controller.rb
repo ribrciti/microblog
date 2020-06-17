@@ -51,7 +51,7 @@ class BlogsController < ApplicationController
 
   private
     def set_blog
-      @blog = Blog.find(params[:id])
+      @blog = Blog.friendly.find(params[:id])  #friendly is from friendly_id gem
     end
 
     def blog_params
