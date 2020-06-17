@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   #get 'pages/contact'
   get 'contact', to: 'pages#contact'
 
-  resources :blogs
+  resources :blogs do 
+    member do 
+      get :toggle_status      
+    end    
+  end
   devise_for :users
   get 'home/index'
     mount Sidekiq::Web => '/sidekiq'
