@@ -9,4 +9,8 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def something
+     @something = params[:some_variable]   
+  end
 end
