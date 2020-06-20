@@ -2,7 +2,9 @@ class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @portfolio_items = Portfolio.all.order(updated_at: :desc)  #asc for ascending order
+    @portfolio_items = Portfolio.all
+    #@portfolio_items = Portfolio.angular      #angular comes from custom scoped model def angular    
+    #@portfolio_items = Portfolio.all.where(subtitle: 'Angular')  #asc for ascending order   .order(updated_at: :desc)
   end
 
   def show
