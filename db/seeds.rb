@@ -13,8 +13,6 @@
 end
 
 
-
-
 Blog.create!( title: "Confessions of a Swimming Freak", 
                body:"Bicycle rights banjo banh mi, kombucha tacos meditation organic squid you probably haven't heard of them pok pok disrupt chartreuse tilde edison bulb franzen. Humblebrag yr subway tile taxidermy drinking vinegar hashtag vape twee meggings pop-up tote bag craft beer church-key banjo keffiyeh. Green juice direct trade street art slow-carb pickled butcher. Bicycle rights four loko tbh occupy truffaut. Chicharrones four dollar toast cold-pressed air plant keytar.
 
@@ -118,3 +116,11 @@ Skill.create!( title: "Ruby",
                 percent_utilized:  72 )
 
 puts "skills created"
+
+3.times do |technology|
+  Portfolio.last.technologies.create!(
+    name: "Technology #{technology}"
+  )
+end
+
+puts "3 technologies created"
