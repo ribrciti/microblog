@@ -10,19 +10,27 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-  <h4>Welcome: <%= current_user.email unless current_user.nil? %>, Hi <%= current_user.firstname %></h4>
- 
-  <% if current_user %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-sm btn-primary" %>
-  <% else %>
-    <%= link_to "Login", new_user_session_path, class: "btn btn-sm btn-outline-success"  %>    
-    <%= link_to "Signup", new_user_registration_path, class: "btn btn-sm btn-outline-danger" %>
-  <% end %>
+    
+   
+    <% if current_user %>
+      <h4>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></h4>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-sm btn-primary" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "btn btn-sm btn-outline-success"  %>    
+      <%= link_to "Signup", new_user_registration_path, class: "btn btn-sm btn-outline-danger" %>
+    <% end %>
 
 
     <%= yield %>
+
+    <hr>
+    <% if session[:source] %>
+      Thanks for visiting me from  <%= session[:source] %>
+    <% end %>
+    <hr>
+
   </body>
 </html>
