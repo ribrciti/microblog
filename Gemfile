@@ -35,6 +35,7 @@ gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootst
 gem 'font-awesome-sass', '~> 5.11', '>= 5.11.2'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'sidekiq', '~> 6.0', '>= 6.0.5'
+gem 'redis', '4.1.4'
 gem 'friendly_id', '~> 5.2', '>= 5.2.5'
 gem 'foreman', '~> 0.86.0'
 gem 'figaro', '~> 1.2'

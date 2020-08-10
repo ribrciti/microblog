@@ -33,9 +33,17 @@
   <%= @portfolio_item.thumb_image %>
 </p>
 <button class="m-3 btn btn-sm btn-outline-primary">
-<%= link_to 'Edit', edit_portfolio_path(@portfolio_item) %> 
+<%= link_to 'Edit', edit_portfolio_path(@portfolio_item) %>
 </button>
 <button class="m-3 btn btn-sm btn-outline-dark">
 <%= link_to 'Back', portfolios_path %>
 </button>
+
+<hr>
+<p>Inspect:  <%= params.inspect %></p>
+
+<p>Id:  <%= params[:id] %></p>
+
+<p>Action:  <%= params[:action] %></p>
+
 
