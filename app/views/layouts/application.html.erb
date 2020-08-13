@@ -14,11 +14,6 @@
   <p class="alert"><%= alert %></p>
 
 
-  <h4>Welcome: <%= current_user.email unless current_user.nil? %>, Hi <%= current_user.firstname  %></h4>
-
-
-
-
   <% if current_user %>
     <h4>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></h4>
     <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-sm btn-primary" %>
