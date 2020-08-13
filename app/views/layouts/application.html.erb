@@ -13,9 +13,14 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <h4>Welcome: <%= current_user.email unless current_user.nil? %>, Hi <%= current_user.firstname unless current_user.nil? %></h4>
+
+  <h4>Welcome: <%= current_user.email unless current_user.nil? %>, Hi <%= current_user.firstname  %></h4>
+
+
+
 
   <% if current_user %>
+    <h4>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></h4>
     <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-sm btn-primary" %>
   <% else %>
     <%= link_to "Login", new_user_session_path, class: "btn btn-sm btn-outline-success"  %>
@@ -24,6 +29,10 @@
 
 
     <%= yield %>
+    <hr>
+    <% if session[:source] %>
+      <p>Thanks for visiting me from <%= session[:source] %></p>
+    <% end %>
   </body>
 </html>
 <p>test</p>
