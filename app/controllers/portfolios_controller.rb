@@ -3,7 +3,7 @@ class PortfoliosController < ApplicationController
 
   def index
     @portfolio_items = Portfolio.all
-    #@portfolio_items = Portfolio.angular      #angular comes from custom scoped model def angular    
+    #@portfolio_items = Portfolio.angular      #angular comes from custom scoped model def angular
     #@portfolio_items = Portfolio.all.where(subtitle: 'Angular')  #asc for ascending order   .order(updated_at: :desc)
   end
 
@@ -12,8 +12,8 @@ class PortfoliosController < ApplicationController
 
   def new
      @portfolio_item = Portfolio.new
-     3.times { @portfolio_item.technologies.build} 
-      
+     3.times { @portfolio_item.technologies.build}
+
   end
 
   def edit
@@ -21,7 +21,7 @@ class PortfoliosController < ApplicationController
 
   def create
     @portfolio_item = Portfolio.new(portfolio_item_params)
-    
+
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Portfolio item was successfully created.' }
@@ -45,7 +45,7 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  def destroy    
+  def destroy
     @portfolio_item.destroy
     respond_to do |format|
       format.html { redirect_to portfolios_url, notice: 'Portfolio item was successfully destroyed.' }
@@ -59,8 +59,12 @@ class PortfoliosController < ApplicationController
     end
 
     def portfolio_item_params
-      params.require(:portfolio).permit(:title, :subtitle, :body, :main_image,
-                      technologies_attributes: [:name])
+      params.require(:portfolio).permit(:title,
+                                        :subtitle,
+                                        :body,
+                                        :main_image,
+                                        technologies_attributes: [:name]
+                                        )
     end
 end
 
