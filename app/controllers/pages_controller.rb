@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
   def home
-    @pages = Blog.all
-    @skills = Skill.all
+    @portfolios = Portfolio.all.limit(4)
+    @pages = Blog.all.limit(4)
+    @skills = Skill.all.limit(3)
+
   end
 
   def about
@@ -11,6 +13,6 @@ class PagesController < ApplicationController
   end
 
   def something
-     @something = params[:some_variable]   
+     @something = params[:some_variable]
   end
 end
