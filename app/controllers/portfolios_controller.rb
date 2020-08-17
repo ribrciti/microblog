@@ -3,6 +3,7 @@ class PortfoliosController < ApplicationController
 
   def index
     @portfolio_items = Portfolio.all
+    @page_title = "My Portfolio"
     #@portfolio_items = Portfolio.angular      #angular comes from custom scoped model def angular
     #@portfolio_items = Portfolio.all.where(subtitle: 'Angular')  #asc for ascending order   .order(updated_at: :desc)
   end

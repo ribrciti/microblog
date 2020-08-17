@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     @portfolios = Portfolio.all.limit(4)
     @pages = Blog.all.limit(4)
     @skills = Skill.all.limit(3)
+    @page_title = "Home Page"
 
   end
 

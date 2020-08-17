@@ -11,4 +11,5 @@ module CurrentUserConcern
                    lastname: 'User',
                    email: "guest@example.com"
                   )
+  end
 end
