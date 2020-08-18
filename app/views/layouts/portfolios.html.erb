@@ -15,31 +15,24 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-   <div class="portfolios-nav">
-    <%= link_to "Home", root_path, class: "btn btn-sm btn-outline-primary" %>
-    <%= link_to "About", about_path, class: "btn btn-sm btn-outline-primary" %>
-    <%= link_to "Contact", contact_path, class: "btn btn-sm btn-outline-primary" %>
-    <%= link_to "Blogs", blogs_path, class: "btn btn-sm btn-outline-primary" %>
-    <%= link_to "Portfolios", portfolios_path, class: "btn btn-sm btn-outline-primary" %>
+  <%= render "shared/nav" %>
+
+  <div class="portfolios-layout-class">
+    <h3><strong>Microblog</strong></h3>
+    <% if current_user.is_a?(User) %>
+      <h4>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></h4>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-sm btn-primary" %>
+    <% else %>
+      <h4>Welcome: Guest</h4>
+      <%= link_to "Login", new_user_session_path, class: "btn btn-sm btn-outline-success"  %>
+      <%= link_to "Signup", new_user_registration_path, class: "btn btn-sm btn-outline-danger" %>
+    <% end %>
+
+
+      <%= yield %>
+
+
   </div>
-
-
-<div class="portfolios-layout-class">
-  <h3><strong>Microblog</strong></h3>
-  <% if current_user.is_a?(User) %>
-    <h4>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></h4>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-sm btn-primary" %>
-  <% else %>
-    <h4>Welcome: Guest</h4>
-    <%= link_to "Login", new_user_session_path, class: "btn btn-sm btn-outline-success"  %>
-    <%= link_to "Signup", new_user_registration_path, class: "btn btn-sm btn-outline-danger" %>
-  <% end %>
-
-
-    <%= yield %>
-
-
-</div>
     <hr>
     <% if session[:source] %>
       <p>Thanks for visiting me from <%= session[:source] %></p>
