@@ -12,12 +12,14 @@ require("channels")
   import 'bootstrap'
   import 'data-confirm-modal'
   import "..//stylesheets/application.scss"
-  
+  import "..//stylesheets/blog.scss"
+  import "..//stylesheets/portfolios.scss"
+
    document.addEventListener("turbolinks:load", () => {
     $('[data-toggle="tooltip"]').tooltip()
     $('[data-toggle="popover"]').popover()
   })
- 
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
