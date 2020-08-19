@@ -12,22 +12,25 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <%= render "shared/nav" %>
+    <div class="portfolios-alert">
+      <h3><strong>Microblog</strong></h3>
+      <%= render "shared/alerts" %>
+      <%= render "shared/nav" %>
+    </div>
 
   <div class="portfolios-layout-class">
-    <h3><strong>Microblog</strong></h3>
+
     <% if current_user.is_a?(User) %>
-      <h4>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></h4>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-sm btn-primary" %>
+      <p><strong>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></strong>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-sm btn-outline-primary" %>
+      <%= link_to "New Portfolio", new_portfolio_path, class: "btn btn-sm btn-outline-primary" %></p>
+      <hr>
     <% else %>
       <h4>Welcome: Guest</h4>
       <%= link_to "Login", new_user_session_path, class: "btn btn-sm btn-outline-success"  %>
       <%= link_to "Signup", new_user_registration_path, class: "btn btn-sm btn-outline-danger" %>
     <% end %>
-
+    <h3><strong>Portfolio Items</strong></h3>
 
       <%= yield %>
 

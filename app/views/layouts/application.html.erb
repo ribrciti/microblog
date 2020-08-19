@@ -12,12 +12,14 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <div class="nav-bar">
+      <h3>
+        <strong>Microblog</strong></h3>
+        <%= render "shared/alerts" %>
+        <%= render "shared/nav", location: 'top' %>
+    </div>
 
- <%= render "shared/nav" %>
 
-  <h3><strong>Microblog</strong></h3>
   <% if current_user.is_a?(User) %>
     <h4>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></h4>
     <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-sm btn-primary" %>

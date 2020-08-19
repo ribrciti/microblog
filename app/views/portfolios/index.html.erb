@@ -1,6 +1,5 @@
-<%= link_to "New Portfolio", new_portfolio_path, class: "btn btn-sm btn-outline-primary" %>
-<hr>
-<h1>Portfolio Items</h1>
+
+
 <div>
 <% @portfolio_items.each do |portfolio_item| %>
   <h4><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item)  %> # <%= portfolio_item.id %></h4>

@@ -12,12 +12,15 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <div class="nav-bar-bottom">
+      <h3><strong>Microblog</strong></h3>
+      <br>
+      <h3><strong>Blogs</strong></h3>
 
+    </div>
 
   <div class="blog-layout-class">
-    <h3><strong>Microblog</strong></h3>
+
     <% if current_user.is_a?(User) %>
       <h4>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></h4>
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-sm btn-primary" %>
@@ -31,9 +34,9 @@
       <%= yield %>
 
   </div>
-
-   <%= render "shared/nav" %>
-
+    <div class="nav-bar-bottom">
+      <%= render "shared/nav" %>
+    </div>
     <hr>
     <% if session[:source] %>
       <p>Thanks for visiting me from <%= session[:source] %></p>
