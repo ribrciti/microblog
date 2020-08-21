@@ -1,31 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= @page_title %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <meta name="keywords" content="<%= @seo_keywords %>" />
-
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= render "shared/head" %>
 
   <body>
     <div class="nav-bar">
-      <h3>
-        <strong>Microblog</strong></h3>
-        <%= render "shared/alerts" %>
-        <%= render "shared/nav", location: 'top' %>
+      <h3><strong>Microblog</strong></h3>
+      <%= render "shared/alerts" %>
+      <%= render "shared/nav" %>
+
     </div>
 
-    <%= login_helper %>
-
     <%= yield %>
+
     <hr>
-    <% if session[:source] %>
-      <p>Thanks for visiting me from <%= session[:source] %></p>
-    <% end %>
+    <%= session_source %>
   </body>
 </html>
 <p>test</p>
+

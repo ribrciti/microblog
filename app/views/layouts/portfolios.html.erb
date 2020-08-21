@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= @page_title %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <meta name="keywords" content="<%= @seo_keywords %>" />
-
-    <%= stylesheet_pack_tag 'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+   <%= render "shared/head" %>
 
   <body>
     <div class="portfolios-alert">
@@ -22,13 +13,11 @@
 
     <% if current_user.is_a?(User) %>
       <p><strong>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></strong>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-sm btn-outline-primary" %>
-      <%= link_to "New Portfolio", new_portfolio_path, class: "btn btn-sm btn-outline-primary" %></p>
+
       <hr>
     <% else %>
       <h4>Welcome: Guest</h4>
-      <%= link_to "Login", new_user_session_path, class: "btn btn-sm btn-outline-success"  %>
-      <%= link_to "Signup", new_user_registration_path, class: "btn btn-sm btn-outline-danger" %>
+
     <% end %>
     <h3><strong>Portfolio Items</strong></h3>
 
@@ -37,9 +26,8 @@
 
   </div>
     <hr>
-    <% if session[:source] %>
-      <p>Thanks for visiting me from <%= session[:source] %></p>
-    <% end %>
+    <%= session_source %>
 
   </body>
 </html>
+

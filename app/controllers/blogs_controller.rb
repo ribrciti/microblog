@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   layout "blog"
 
   def index
-    @blogs = Blog.all.limit(8)
+    @blogs = Blog.all.limit(6)
     @page_title = "My Blog"
   end
 
