@@ -19,7 +19,11 @@
       <h4>Welcome: Guest</h4>
 
     <% end %>
-    <h3><strong>Portfolio Items</strong></h3>
+    <h3>
+      <strong>Portfolio Items</strong>
+      <%= link_to "New Item", new_portfolio_path(@portfolio_item), class: "btn btn-sm btn-primary"  %>
+
+    </h3>
 
       <%= yield %>
 
