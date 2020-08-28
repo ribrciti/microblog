@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   layout "blog"
 
   def index
-    @blogs = Blog.all.order(created_at: :ASC).limit(6)
+    @blogs = Blog.all.order(created_at: :ASC).limit_blogs
     @page_title = "My Blog"
   end
 

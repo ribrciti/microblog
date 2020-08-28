@@ -3,10 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
- 
+
   validates_presence_of :user_name
 
-  def firstname 
+  def firstname
     self.user_name.split.first
   end
 
