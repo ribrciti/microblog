@@ -42,6 +42,7 @@ gem 'foreman', '~> 0.86.0'
 gem 'figaro', '~> 1.2'
 gem 'image_processing', '~> 1.2'  # uncomment this line
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
+gem 'petergate', '~> 2.0', '>= 2.0.1'
 
 #alert from dependabot git
 gem "rack", ">= 2.2.3"
