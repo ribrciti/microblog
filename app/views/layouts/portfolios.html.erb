@@ -13,12 +13,11 @@
 
     <% if current_user.is_a?(User) %>
       <p><strong>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></strong>
-
       <hr>
     <% else %>
       <h4>Welcome: Guest</h4>
-
     <% end %>
+
     <h3>
       <strong>Portfolio Items</strong>
       <%= link_to "New Item", new_portfolio_path(@portfolio_item), class: "btn btn-sm btn-primary"  %>

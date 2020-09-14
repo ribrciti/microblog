@@ -1,5 +1,4 @@
-<%= link_to "New Blog", new_blog_path, class: "btn btn-sm btn-primary" %>
-<%= link_to "Home", root_path, class: "btn btn-sm btn-dark" %>
+<%= link_to "New Blog", new_blog_path if logged_in?(:site_admin) %>
 
 <table class="page-body">
 
