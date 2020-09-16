@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+   <%= render "shared/head" %>
+  <body>
+    <div class="page-body">
+
+      <h3><strong>Microblog</strong></h3>
+      <%= render "shared/alerts" %>
+      <%= render "shared/nav" %>
+      <%= render "shared/welcome" %>
+
+      <%= yield %>
+
+    </div>
+
+    <%= render "shared/copyright" %>
+
+   <%= session_source_helper("blog_layout") %>
+
+  </body>
+</html>
