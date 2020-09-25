@@ -1,6 +1,6 @@
 <header class="masthead mb-auto">
   <div class="inner">
-    <h3 class="masthead-brand"><%= render "shared/logo" %>Microblog</h3>
+    <h2 class="masthead-brand"><%= render "shared/logo" %><strong>Microblog</strong></h2>
     <nav class="nav nav-masthead justify-content-center">
       <%= link_to "Home", root_path, class: "btn btn-sm btn-outline-primary" %>
       <%= link_to "About", about_path, class: "btn btn-sm btn-outline-primary" %>
@@ -10,7 +10,7 @@
 
       <%= login_helper %>
 
-      <%= render "shared/welcome" %>
+
     </nav>
   </div>
 </header>

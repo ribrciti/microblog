@@ -3,26 +3,17 @@
   <%= render "shared/head" %>
 
   <body>
+    <div class="page-body">
+      <div class="cover-container d-flex w-100 h-200 p-4 mx-auto flex-column">
+        <%= render "shared/top_nav" %>
 
+        <%= yield %>
 
-      <h3>
-        <%= image_pack_tag '3 ring_black_logo.png', width: "50" %>
-        <strong>Microblogs</strong>
-      </h3>
+        <%= render "shared/copyright" %>
 
-      <%= render "shared/welcome" %>
-      <%= render "shared/alerts" %>
-      <%= render "shared/nav" %>
-
-
-
-
-    <%= yield %>
-    <%= image_pack_tag '3 ring_black_logo.png', width: "50" %>
-    <%= render "shared/copyright" %>
-
-    <hr>
-    <%= session_source_helper("homepage_layout") %>
+        <%= session_source_helper("homepage_layout") %>
+      </div>
+    </div>
   </body>
 </html>
 
