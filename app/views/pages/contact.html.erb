@@ -1,3 +1,23 @@
-<h1>Pages#contact</h1>
+<main role="main" class="inner cover">
+    <%= render "shared/welcome" %>
+    <div class="row justify-content-center">
+      <h3 class="cover-heading1">Are you ready to take your project to the next level?</h3>
 
-<%= number_to_phone "555-555-5555" %>
+      <div class="helping">
+
+        <p class="address-style">Office Address:</p>
+
+        <p>123 East West Anystreet Rd, Unit 7, Cityville Terrace, US 01234</p>
+        <p class="address-style">Phone:</p>
+        <p>(987) 654-3210</p>
+        <p class="address-style">Email:</p>
+        <p>rRichards@example.com</p>
+        <p>
+          <%= link_to "Send a Message?", about_path, class: "btn btn-lg btn-outline-danger btn-center text-center" %><p>"All requests are kept confidential"</p>
+        </p>
+      </div>
+
+    </div>
+
+  </main>
+

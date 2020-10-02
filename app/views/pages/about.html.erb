@@ -1,2 +1,16 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<main role="main" class="inner cover">
+    <%= render "shared/welcome" %>
+    <div class="row justify-content-center">
+      <h1 class="cover-heading-about">
+        About
+      </h1>
+
+      <p class="lead">
+        For the last five years, thundercats vegan biodiesel, vice mustache coloring book poke vaporware 90's artisan raclette. Taiyaki asymmetrical pok pok, ugh sustainable put a bird on it tilde letterpress sartorial man bun readymade echo park williamsburg succulents plaid. Pour-over kogi four loko, migas food truck occupy readymade shaman YOLO venmo woke glossier gastropub literally. Hammock chia man braid hoodie hot chicken, chartreuse health goth. Gluten-free DIY retro, schlitz whatever locavore farm-to-table.  All work is professionally managed with full confidentiality in mind.
+      </p>
+      <p class="lead">
+        <%= link_to "Contact Me", contact_path, class: "btn btn-lg btn-secondary border border-danger"  %>
+      </p>
+    </div>
+  </main>
+
