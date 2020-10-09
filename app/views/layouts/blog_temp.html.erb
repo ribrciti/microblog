@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+   <%= render "shared/head" %>
+  <body>
+    <div class="nav-bar-bottom">
+      <h3><strong>Microblog</strong></h3>
+
+      <br>
+      <h3><strong>Blogs</strong></h3>
+
+    </div>
+
+  <div class="blog-layout-class">
+    <%= render "shared/alerts" %>
+
+    <%= yield %>
+
+    <%= render "shared/copyright" %>
+  </div>
+    <div class="nav-bar-bottom">
+      <br>
+      <%= render "shared/nav" %>
+      <% if current_user.is_a?(GuestUser) %>
+        <h4>Welcome: Guest</h4>
+      <% else %>
+        <p><strong>Welcome: <%= current_user.email %></strong>
+      <% end %>
+    </div>
+    <hr>
+   <%= session_source_helper("blog_layout") %>
+
+  </body>
+</html>
+
+
+from blog index page>>>>>>
+
+<table class="page-body">
+
+  <%= render @blogs %>
+
+</table>
+
+
+ <div class="nav-bar-bottom">
+      <br>
+      <%= render "shared/top_nav" %>
+      <% if current_user.is_a?(GuestUser) %>
+        <h4>Welcome: Guest</h4>
+      <% else %>
+        <p><strong>Welcome: <%= current_user.email %></strong>
+      <% end %>
+    </div>

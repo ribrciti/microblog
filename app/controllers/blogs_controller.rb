@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   def index
-    @blogs = Blog.all.order(created_at: :ASC).limit_blogs
+    @blogs = Blog.all.order(created_at: :ASC)#.limit_blogs
     @page_title = "My Blog"
   end
 
