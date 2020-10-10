@@ -1,20 +1,13 @@
- <thead>
-  <tr>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Body</th>
-    <th colspan="4"></th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td><%= blog.title.upcase %>  #:<%= blog.id %> </td>
-    <td>Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</td>
-    <td><%= blog.body.truncate_words(28) %></td>
-    <td><%= link_to blog.status, toggle_status_blog_path(blog), class: "btn btn-sm btn-outline-primary" %></td>
-    <td><%= link_to 'Show', blog, class: "btn btn-sm btn-primary" %></td>
-    <td><%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %></td>
-    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
-  </tr>
 
-  </tbody>
+<h4><%=link_to blog.title.upcase, blog %></h4>
+
+<p>Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
+<p><%= blog.body.truncate_words(58) %></p>
+
+<% if logged_in?(:site_admin) %>
+  <%= link_to blog.status, toggle_status_blog_path(blog), class: "btn btn-sm btn-success"  %>
+  <%= link_to 'Edit', edit_blog_path(blog), class: "btn btn-sm btn-outline-dark" %>
+  <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
+<% end %>
+<div class="hline1">
+</div>
