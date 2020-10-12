@@ -1,6 +1,8 @@
-<h1>Editing Blog</h1>
+<div class="blog-post-title  m-4 ">
+  <h3 class="font-weight-bold">Edit Blog</h3>
+  <div class="blog-post m-4 ">
+    <%= render 'form', blog: @blog %>
+    <%= link_to "Back", blogs_path, class: "btn btn-sm btn-outline-primary"  %>
+  </div>
+</div>
 
-<%= render 'form', blog: @blog %>
-
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>

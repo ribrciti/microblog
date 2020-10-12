@@ -1,14 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+    <div class="navbar-nav rounded-sm">
+      <form class="form-inline justify-content-center">
+        <%= render "shared/nav" %>
+      </form>
 
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body %>
-</p>
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="card ">
+          <%= image_pack_tag "image_pink.png", width: 400, height: 300, class: " m-4" %>
+          <div class="blog-post m-4">
+            <%= render @blog %>
+            <%= link_to "Back", blogs_path, class: "btn btn-sm btn-outline-primary"  %>
+          </div>
+        </div>
+      </div>
 
-<%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
-<%= link_to 'Back', blogs_path, class: "btn btn-sm primary" %>
+      <div class="col-sm-3">
+        <%= render "sidebar" %>
+      </div>
+    </div>
+
+  <div class="row">
+      <div class="show1 form-inline ">
+        <p><%= render "shared/logo" %><%= @copyright %></p>
+      </div>
+  </div>
+</div>
+

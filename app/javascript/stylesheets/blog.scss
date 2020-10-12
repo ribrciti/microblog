@@ -46,6 +46,25 @@
   background-color: #eee4e1;
 }
 
+.show1 {
+  font-size: 13px;
+  margin-left: 2rem;
+  max-height: 52px;
+  color: #000;
+  margin-top: 8rem;
+}
+
+.form-styling {
+  background-color: #D8D2E5;
+}
+
+.form1 {
+  font-weight: bold;
+}
+
+
+
+
 
 
 
@@ -140,9 +159,12 @@ h1, h2, h3, h4, h5, h6 {
 .blog-post {
   margin-bottom: 4rem;
 }
+
 .blog-post-title {
   margin-bottom: .25rem;
-  font-size: 2.5rem;
+  font-size: 1.25rem;
+  background-color: #E8F3EF;
+  text-area: 200px;
 }
 .blog-post-meta {
   margin-bottom: 1.25rem;
