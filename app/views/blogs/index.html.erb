@@ -1,93 +1,24 @@
 <div class="container">
-  <header class="blog-header  ">
-    <div class="navbar-nav rounded-sm">
-      <form class="form-inline justify-content-center">
-        <%= render "shared/nav" %>
-      </form>
-    </div>
-    <div class="row flex-nowrap justify-content-between align-items-center my-3">
-      <div class="col-4 pt-1">
-        Subscribe
-      </div>
-      <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="#">Large</a>
-      </div>
-      <div class="col-4 d-flex justify-content-end align-items-center">
-        <a class="btn btn-sm btn-outline-secondary" href="#">Search Categories</a>
-      </div>
-    </div>
-  </header>
-
-  <div class="jumbotron p-4 p-md-5 text-white rounded bg-info">
-    <div class="col-md-8 px-0">
-      <h1 class="display-4 font-italic font-weight-bold" >Title of a longer featured blog post</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
-    </div>
-  </div>
-
-
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">World</strong>
-          <h3 class="mb-0">Featured post</h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="stretched-link">Continue reading</a>
+  <%= render "nav_blog" %>
+  <%= render "masthead" %>
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-9 blog-main ">
+        <h3 class="pb-4 mb-4 font-italic border-bottom ">
+          <%= render "shared/logo" %>
+          From Microblog Pages<%= link_to "New Blog", new_blog_path, class: "btn btn-info m-2 float-right" if logged_in?(:site_admin) %>
+        </h3>
+        <div class="blog-post">
+          <%= render @blogs %>
         </div>
-        <div class="col-auto d-none d-lg-block">
-
-        </div>
+        <nav class="blog-pagination">
+          <a class="btn btn-outline-primary" href="#">Older</a>
+          <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+        </nav>
       </div>
+      <aside class="col-md-3 blog-sidebar">
+        <%= render "sidebar" %>
+      </aside>
     </div>
-    <div class="col-md-6">
-      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Design</strong>
-          <h3 class="mb-0">Post title</h3>
-          <div class="mb-1 text-muted">Nov 11</div>
-          <p class="mb-auto">This is a wider card with supporting text below as a  ...   {% include icons/placeholder.svg width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" %}</p>
-          <a href="#" class="stretched-link">Continue reading</a>
-        </div>
-
-        <div class="col-auto d-none d-lg-block">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-<main role="main" class="container">
-  <div class="row">
-    <div class="col-md-9 blog-main ">
-      <h3 class="pb-4 mb-4 font-italic border-bottom ">
-        <%= render "shared/logo" %>
-        From Microblog Pages<%= link_to "New Blog", new_blog_path, class: "btn btn-info m-2 float-right" if logged_in?(:site_admin) %>
-      </h3>
-
-      <div class="blog-post">
-        <%= render @blogs %>
-      </div>
-      <nav class="blog-pagination">
-        <a class="btn btn-outline-primary" href="#">Older</a>
-        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-      </nav>
-
-    </div><!-- /.blog-main -->
-
-    <aside class="col-md-3 blog-sidebar">
-      <%= render "sidebar" %>
-    </aside><!-- /.blog-sidebar -->
-
-  </div><!-- /.row -->
-
-</main><!-- /.container -->
-
-<footer class="blog-footer">
-  <p>Blog template built for <%= render "shared/logo" %></p>
-  <p>
-<a href="#top-of-page">Back to Top</a>
-  </p>
-</footer>
+  </main>
+<%= render "blog_footer" %>
