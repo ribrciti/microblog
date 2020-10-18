@@ -7,6 +7,7 @@ class Blog < ApplicationRecord
 
   belongs_to :topic
 
+
   def self.limit_blogs
     limit(5)
   end
