@@ -8,6 +8,10 @@
           <%= render "shared/logo" %>
           From Microblog Pages<%= link_to "New Blog", new_blog_path, class: "btn btn-info m-2 float-right" if logged_in?(:site_admin) %>
         </h3>
+        <p><%= paginate @blogs %></p>
+        <div class="hline2">
+        </div>
+
         <div class="blog-post">
           <%= render @blogs %>
         </div>
