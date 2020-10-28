@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.page(params[:page]).per(9)
     @page_title = "My Portfolio"
     #@portfolio_items = Portfolio.angular      #angular comes from custom scoped model def angular
     #@portfolio_items = Portfolio.all.where(subtitle: 'Angular')  #asc for ascending order   .order(updated_at: :desc)

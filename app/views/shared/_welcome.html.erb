@@ -1,5 +1,7 @@
-<% if current_user.is_a?(GuestUser) %>
-      Welcome: Guest
-<% else %>
-  Welcome: <%= current_user.email %>
-<% end %>
+<div class="m-2 font-weight-medium">
+  <% if current_user.is_a?(GuestUser) %>
+    Welcome: Guest
+  <% else %>
+    Welcome: <%= current_user.email %>
+  <% end %>
+</div>

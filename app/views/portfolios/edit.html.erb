@@ -1,7 +1,7 @@
-<h1>Editing Group</h1>
-
-<%= render 'form', portfoloio: @portfoloio %>
-
-
-<%= link_to 'Back', portfolios_path %>
-<%= link_to "Delete", @portfolio, method: :destroy, data: { confirm: 'Are you sure?' } %>
+<div class="form-styling">
+  <h1 class="font-weight-bold">Edit Portfolio</h1>
+  <div class="blog-post m-4">
+    <%= render 'form', portfolios: @portfolios %>
+    <%= link_to "Back", blogs_path, class: "btn btn-sm btn-primary m-2"  %>
+  </div>
+</div>

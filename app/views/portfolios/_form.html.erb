@@ -12,22 +12,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+   <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-   <div class="field">
+   <div class="form-group">
     <%= form.label :subtitle %>
     <%= form.text_field :subtitle %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :body %>
     <%= form.text_area :body %>
   </div>
 
-   <div class="form-control">
+  <div class="form-control">
     <ul>
       <%= form.fields_for :technologies do |technology_form| %>
         <li>
@@ -41,18 +41,21 @@
   <br>
   <br>
   <br>
+  <br>
 
-   <div class="field">
+   <div class="form-group">
     <%= form.label :thumb_image %>
     <%= form.text_field :thumb_image %>
   </div>
 
-   <div class="field">
+  <div class="form-group">
     <%= form.label :main_image %>
     <%= form.text_field :main_image %>
   </div>
 
-  <div class="actions">
+  <div class="form-group">
     <%= form.submit %>
   </div>
 <% end %>
+
+

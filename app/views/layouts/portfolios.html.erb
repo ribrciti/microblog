@@ -4,32 +4,22 @@
 
   <body>
     <div class="portfolios-alert">
-      <h3><strong>Microblog</strong></h3>
       <%= render "shared/alerts" %>
-      <%= render "shared/nav" %>
+      <%= render "shared/nav" %><%= render "shared/welcome" %>
+      <%= render "nav-portfolio" %>
     </div>
+    <main role="main">
 
-  <div class="portfolios-layout-class">
-
-    <% if current_user.is_a?(User) %>
-      <p><strong>Welcome: <%= current_user.email %>, Hi <%= current_user.firstname %></strong>
-      <hr>
-    <% else %>
-      <h4>Welcome: Guest</h4>
-    <% end %>
-
-    <h3>
-      <strong>Portfolio Items</strong>
-      <%= link_to "New Item", new_portfolio_path(@portfolio_item), class: "btn btn-sm btn-primary"  %>
-    </h3>
+      <%= render "masthead" %>
 
       <%= yield %>
-      <%= render "shared/copyright" %>
+    </main>
+      <%= render "footer-portfolio" %>
 
-  </div>
+    </div>
+
     <hr>
     <%= session_source_helper("portfolio_layout") %>
-
   </body>
 </html>
 
