@@ -1,49 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="card mx-4 my-4" >
+  <div class="row no-gutters">
+    <div class="col-md-8">
+      <%= image_tag @portfolio_item.main_image  %>
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        <h3 class="card-title">
+          <%= @portfolio_item.title %>
 
-<%= @portfolio_item.id %>
-<%= image_tag @portfolio_item.main_image  %>
-<p>
-  <strong>Title:</strong>
-  <%= @portfolio_item.title %>
-</p>
+        </h3>
+        <em><%= @portfolio_item.subtitle %></em>
 
-<p>
-  <strong>Subtitle:</strong>
-  <%= @portfolio_item.subtitle %>
-</p>
+        <hr>
 
-<p>
-  <strong>Body</strong>
-  <%= @portfolio_item.body %>
-<hr>
-<%= link_to "Edit", edit_portfolio_path(@portfolio_item) if logged_in?(:site_admin) %>
+        <h5>Technologies Used:</h5>
+        <% @portfolio_item.technologies.each do |t| %>
+          <p><%= t.name %></p>
+        <% end %>
 
-<h2>Technologies Used:</h2>
-<% @portfolio_item.technologies.each do |t| %>
-  <p>
-    <%= t.name %>
+        <hr>
+        <br>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text">
+          <small class="text-muted">
+            <p>Published <%= distance_of_time_in_words(@portfolio_item.created_at, Time.now) %> ago</p>
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="portfolio-body mx-4 my-4">
+    <%= @portfolio_item.body %>
   </p>
-<% end %>
+</div>
 
-<p>
-  <strong>Main Image File</strong>
-  <%= @portfolio_item.main_image %>
-</p>
 
-<p>
-  <strong>Thumb Image File</strong>
-  <%= @portfolio_item.thumb_image %>
-</p>
 
-<button class="m-3 btn btn-sm btn-outline-dark">
+<button class="ml-3 btn btn-sm btn-outline-dark">
 <%= link_to 'Back', portfolios_path %>
 </button>
 
-<hr>
-<p>Inspect:  <%= params.inspect %></p>
-
-<p>Id:  <%= params[:id] %></p>
-
-<p>Action:  <%= params[:action] %></p>
 
 

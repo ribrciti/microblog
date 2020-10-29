@@ -8,13 +8,10 @@
       <h3><%= render "shared/welcome" %></h3>
       <%= render "nav-portfolio" %>
     </div>
-    <main role="main">
 
-      <%= render "masthead" %>
+      <%= render "masthead" if params[:action] == "index" %>
 
       <%= yield %>
-
-    </main>
 
     <%= render "footer-portfolio" %>
 
