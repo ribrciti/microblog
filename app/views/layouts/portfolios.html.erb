@@ -5,7 +5,7 @@
   <body>
     <div class="portfolios-alert">
       <%= render "shared/alerts" %>
-      <%= render "shared/nav" %><%= render "shared/welcome" %>
+      <h3><%= render "shared/welcome" %></h3>
       <%= render "nav-portfolio" %>
     </div>
     <main role="main">
@@ -13,8 +13,10 @@
       <%= render "masthead" %>
 
       <%= yield %>
+
     </main>
-      <%= render "footer-portfolio" %>
+
+    <%= render "footer-portfolio" %>
 
     </div>
 
