@@ -3,11 +3,11 @@
 <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
     <div class="card-body">
       <p class="card-text m-1">
-      <span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item)  %></span>
-      <p><em><%= portfolio_item.subtitle %></em></p>
-    </p>
-      <div class="d-flex justify-content-between align-items-center">
+        <span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item)  %></span>
+        <p><em><%= portfolio_item.subtitle %></em></p>
+      </p>
 
+      <div class="d-flex justify-content-between align-items-center">
         <%= link_to "Edit", edit_portfolio_path(portfolio_item), class: "btn btn-sm btn-success" if logged_in?(:site_admin) %>
         <%= link_to "Delete", portfolio_item, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" if logged_in?(:site_admin) %>
       </div>
