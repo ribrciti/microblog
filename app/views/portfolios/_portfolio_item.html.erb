@@ -3,7 +3,7 @@
 <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
     <div class="card-body">
       <p class="card-text m-1">
-        <span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item)  %></span>
+        #<%= portfolio_item.id %>:  <span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item)  %></span>
         <p><em><%= portfolio_item.subtitle %></em></p>
       </p>
 

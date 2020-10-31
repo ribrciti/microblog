@@ -1,6 +1,6 @@
-class Portfolio < ApplicationRecord  
+class Portfolio < ApplicationRecord
   has_many :technologies
-  accepts_nested_attributes_for :technologies, 
+  accepts_nested_attributes_for :technologies,
                                 reject_if: lambda{ |attrs| attrs['name'].blank? }
 
   include Placeholder
@@ -9,16 +9,20 @@ class Portfolio < ApplicationRecord
   def self.angular
     where(subtitle: 'Angular')
   end
-  
+
+  def self.by_position
+    order("position ASC")
+  end
+
   #scoped code below is same as def.self.angular method above
   #scope :angular, -> { where(subtitle: 'Angular') }
 
   scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Ruby_on_Rails') }
 
-  
+
 #sets default values for images when portfolio controller actions runs so images
 #are not nil if not set for new images.
-  after_initialize :set_defaults  
+  after_initialize :set_defaults
 
   def set_defaults
     self.main_image   ||= Placeholder.image_generator(height: '600', width: '400')
