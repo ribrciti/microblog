@@ -49,7 +49,7 @@ gem "rack", ">= 2.2.3"
 gem "actionpack", ">= 6.0.3.2"
 
 group :development, :test do
-  gem 'better_errors', '~> 2.5', '>= 2.5.1'
+  gem 'better_errors', '~> 2.8'
   gem 'binding_of_caller'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
 end
