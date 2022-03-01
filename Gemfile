@@ -40,7 +40,7 @@ gem 'redis', '4.1.4'
 gem 'friendly_id', '~> 5.2', '>= 5.2.5'
 gem 'foreman', '~> 0.86.0'
 gem 'figaro', '~> 1.2'
-gem 'image_processing', '~> 1.2'  # uncomment this line
+gem 'image_processing', '~> 1.12' # uncomment this line
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 
